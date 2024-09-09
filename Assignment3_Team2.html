@@ -7549,7 +7549,7 @@ a.anchor-link {
 <tr>
 <td style="text-align:left">Team Member</td>
 <td style="text-align:left">Tran Quoc Hung</td>
-<td style="text-align:left">s</td>
+<td style="text-align:left">s4045608</td>
 </tr>
 </tbody>
 </table>
@@ -7572,29 +7572,29 @@ a.anchor-link {
 <li>Generation of future predictions</li>
 </ol>
 <h2 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">¶</a></h2><ol>
-<li>[Data Loading and Initial Preprocessing]</li>
-<li>[Exploratory Data Analysis and Visualization]<ul>
-<li>[Correlation Heatmap]</li>
-<li>[Feature Distributions]</li>
-<li>[Feature Relationships with Max Temperature]</li>
-<li>[Temperature Variable Distributions]</li>
+<li><a href="#data-loading-and-initial-preprocessing">Data Loading and Initial Preprocessing</a></li>
+<li><a href="#exploratory-data-analysis-and-visualization">Exploratory Data Analysis and Visualization</a><ul>
+<li><a href="#correlation-heatmap">Correlation Heatmap</a></li>
+<li><a href="#feature-distributions">Feature Distributions</a></li>
+<li><a href="#feature-relationships-with-max-temperature">Feature Relationships with Max Temperature</a></li>
+<li><a href="#temperature-variable-distributions">Temperature Variable Distributions</a></li>
 </ul>
 </li>
-<li>[Advanced Feature Engineering]<ul>
-<li>[Time-based Features]</li>
-<li>[Lag Features and Rolling Averages]</li>
+<li><a href="#data-preparation-and-feature-engineering">Data Preparation and Feature Engineering</a><ul>
+<li><a href="#time-based-features">Time-based Features</a></li>
+<li><a href="#lag-features-and-rolling-averages">Lag Features and Rolling Averages</a></li>
+<li><a href="#feature-selection-and-correlation-analysis">Feature Selection and Correlation Analysis</a></li>
 </ul>
 </li>
-<li>[Feature Selection and Correlation Analysis]</li>
-<li>[Model Implementation and Evaluation]<ul>
-<li>[K-Fold Cross-validation]</li>
-<li>[Residual Analysis]</li>
+<li><a href="#model-implementation-and-evaluation">Model Training and Initial Evaluation</a><ul>
+<li><a href="#k-fold-cross-validation">K-Fold Cross-validation</a></li>
+<li><a href="#residual-analysis">Residual Analysis</a></li>
 </ul>
 </li>
-<li>[Model Fine-tuning]</li>
-<li>[Final Model Evaluation]</li>
-<li>[Future Predictions]</li>
-<li>[Conclusion]</li>
+<li><a href="#model-fine-tuning">Model Fine-tuning</a></li>
+<li><a href="#final-model-evaluation">Final Model Evaluation and Testing</a></li>
+<li><a href="#future-predictions">Future Predictions</a></li>
+<li><a href="#final-conclusion">Conclusion and Further Recommendations</a></li>
 </ol>
 </div>
 </div>
@@ -7615,7 +7615,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [0]</span>
@@ -7719,7 +7719,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [1]</span>
@@ -7765,7 +7765,8 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Data-Loading-and-Initial-Preprocessing">Data Loading and Initial Preprocessing<a class="anchor-link" href="#Data-Loading-and-Initial-Preprocessing">¶</a></h2><p>Here, we load the dataset and perform initial preprocessing steps, such as handling missing values, removing outliers, and creating additional time-based features.</p>
+<p><a id="data-loading-and-initial-preprocessing"></a></p>
+<h3 id="1.-Data-Loading-and-Initial-Preprocessing"><strong>1. Data Loading and Initial Preprocessing</strong><a class="anchor-link" href="#1.-Data-Loading-and-Initial-Preprocessing">¶</a></h3><p>Here, we load the dataset and perform initial preprocessing steps, such as handling missing values, removing outliers, and creating additional time-based features.</p>
 <ol>
 <li>Loading the data: Data is read from a csv file and stored in the pandas DataFrame.
 Minor adjustments were also made before futher processing:</li>
@@ -7799,7 +7800,7 @@ To classify and remove outliers, we use the Interquartile Range method (IQR):</l
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [2]</span>
@@ -7926,7 +7927,8 @@ dtype: int64
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exploratory-Data-Analysis-and-Visualization">Exploratory Data Analysis and Visualization<a class="anchor-link" href="#Exploratory-Data-Analysis-and-Visualization">¶</a></h2><p>In this section, we explore the dataset through various visualizations. We analyze the distributions of the numeric features and their correlations with the target variable (<code>tempmax</code>).</p>
+<p><a id="exploratory-data-analysis-and-visualization"></a></p>
+<h3 id="2.-Exploratory-Data-Analysis-and-Visualization"><strong>2. Exploratory Data Analysis and Visualization</strong><a class="anchor-link" href="#2.-Exploratory-Data-Analysis-and-Visualization">¶</a></h3><p>In this section, we explore the dataset through various visualizations. We analyze the distributions of the numeric features and their correlations with the target variable (<code>tempmax</code>).</p>
 </div>
 </div>
 </div>
@@ -7935,7 +7937,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [3]</span>
@@ -8100,7 +8102,7 @@ std      13.308818     0.288554
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [3.1]</span>
@@ -8242,7 +8244,7 @@ std      13.308818     0.288554
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [3.2]</span>
@@ -8425,7 +8427,7 @@ Insight: Days have either very high or very low cloud cover with relatively few 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [3.3]</span>
@@ -8611,7 +8613,7 @@ Insight: Days have either very high or very low cloud cover with relatively few 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [3.4]</span>
@@ -8718,7 +8720,8 @@ Insight: Days have either very high or very low cloud cover with relatively few 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Advanced-Feature-Engineering">Advanced Feature Engineering<a class="anchor-link" href="#Advanced-Feature-Engineering">¶</a></h2><p>This section outlines some major enhancements to our dataset feature engineering and preparing a robust preprocessing pipeline. This will be of pivotal importance to enhance the performance of our model and structuring our data into a format apt for machine learning algorithms.</p>
+<p><a id="data-preparation-and-feature-engineering"></a></p>
+<h3 id="3.-Data-Preparation-and-Feature-Engineering"><strong>3. Data Preparation and Feature Engineering</strong><a class="anchor-link" href="#3.-Data-Preparation-and-Feature-Engineering">¶</a></h3><p>This section outlines some major enhancements to our dataset feature engineering and preparing a robust preprocessing pipeline. This will be of pivotal importance to enhance the performance of our model and structuring our data into a format apt for machine learning algorithms.</p>
 <p>Some critical steps employed here include:</p>
 <ol>
 <li><strong>Time-based Feature Engineering</strong>: New features are generated from the datetime column to catch temporal patterns.</li>
@@ -8735,7 +8738,7 @@ Insight: Days have either very high or very low cloud cover with relatively few 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [4]</span>
@@ -8915,7 +8918,8 @@ full_pipeline saved successfully.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Model-Training-and-Initial-Evaluation">Model Training and Initial Evaluation<a class="anchor-link" href="#Model-Training-and-Initial-Evaluation">¶</a></h3><p>In this section, we evaluate multiple regression models to find the best performer for our temperature prediction task. Our approach is designed to be comprehensive and robust, ensuring that we select the most suitable model for our specific problem.</p>
+<p><a id="model-implementation-and-evaluation"></a></p>
+<h3 id="4.-Model-Training-and-Initial-Evaluation"><strong>4. Model Training and Initial Evaluation</strong><a class="anchor-link" href="#4.-Model-Training-and-Initial-Evaluation">¶</a></h3><p>In this section, we evaluate multiple regression models to find the best performer for our temperature prediction task. Our approach is designed to be comprehensive and robust, ensuring that we select the most suitable model for our specific problem.</p>
 <h4 id="Model-Selection-Justification">Model Selection Justification<a class="anchor-link" href="#Model-Selection-Justification">¶</a></h4><p>We have selected the following kinds of models to evaluate:</p>
 <ol>
 <li><p><strong>Tree-based models</strong> include Random Forest, Gradient Boosting, LightGBM, and XGBoost. Fundamentally, all these models are good in terms of nonlinear relationships and interaction between different features with a wide range of applications that solve most of the problems while handling the numerical and categorical features effectively.</p>
@@ -8960,7 +8964,7 @@ full_pipeline saved successfully.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [5]</span>
@@ -9164,7 +9168,8 @@ BayesianRidge saved successfully.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Models-Fine-tuning">Models Fine-tuning<a class="anchor-link" href="#Models-Fine-tuning">¶</a></h2><p>Hyperparameter tuning is a very important procedure that could eventually optimize the performance of our model. Here's the justification for the chosen hyperparameters for each model:</p>
+<p><a id="model-fine-tuning"></a></p>
+<h3 id="5.-Model-Fine-tuning"><strong>5. Model Fine-tuning</strong><a class="anchor-link" href="#5.-Model-Fine-tuning">¶</a></h3><p>Hyperparameter tuning is a very important procedure that could eventually optimize the performance of our model. Here's the justification for the chosen hyperparameters for each model:</p>
 <ol>
 <li><strong>RandomForestRegressor</strong>:</li>
 </ol>
@@ -9249,7 +9254,7 @@ BayesianRidge saved successfully.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [6]</span>
@@ -9386,7 +9391,8 @@ Best RMSE for BayesianRidge after tuning: 0.0043
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Final-Model-Evaluation">Final Model Evaluation<a class="anchor-link" href="#Final-Model-Evaluation">¶</a></h2><p>Having fine-tuned our best model, we now go ahead to see its performance on unseen data. This step is crucial for determining how well our model generalizes to new previously unseen examples.</p>
+<p><a id="final-model-evaluation"></a></p>
+<h3 id="6.-Final-Model-Evaluation-and-Testing"><strong>6. Final Model Evaluation and Testing</strong><a class="anchor-link" href="#6.-Final-Model-Evaluation-and-Testing">¶</a></h3><p>Having fine-tuned our best model, we now go ahead to see its performance on unseen data. This step is crucial for determining how well our model generalizes to new previously unseen examples.</p>
 <h5 id="Best-Model-Performance-After-Tuning">Best Model Performance After Tuning<a class="anchor-link" href="#Best-Model-Performance-After-Tuning">¶</a></h5><p>First, we print the best RMSE achieved during the process of tuning the hyperparameters. This score is from cross-validation, so it gives us an idea about what we can expect from the model's performance.</p>
 <h5 id="Test-Set-Evaluation">Test Set Evaluation<a class="anchor-link" href="#Test-Set-Evaluation">¶</a></h5><p>We use the held-out test set to get an unbiased estimate of our model's performance. Given that this dataset was not used for model training or during any hyperparameter tuning, it is a good proxy for new unseen data.</p>
 <ol>
@@ -9415,7 +9421,7 @@ Whether the RMSEs are acceptable or not depends on the type of application that 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [7]</span>
@@ -9454,7 +9460,7 @@ Performance on test data: RMSE: 0.0002
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>['saved_objects/test_rmse.pkl']</pre>
 </div>
@@ -9469,7 +9475,8 @@ Performance on test data: RMSE: 0.0002
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Future-Predictions">Future Predictions<a class="anchor-link" href="#Future-Predictions">¶</a></h2><p>We shall now use our model which has been trained and tuned in order to make the forecast of the maximum temperature for the next 200 days in this section. We will consider several important steps in doing this, including:</p>
+<p><a id="future-predictions"></a></p>
+<h3 id="7.-Future-Temperature-Predictions"><strong>7. Future Temperature Predictions</strong><a class="anchor-link" href="#7.-Future-Temperature-Predictions">¶</a></h3><p>We shall now use our model which has been trained and tuned in order to make the forecast of the maximum temperature for the next 200 days in this section. We will consider several important steps in doing this, including:</p>
 <ol>
 <li><strong>Mapping of Historic Data</strong>:</li>
 </ol>
@@ -9532,7 +9539,7 @@ These are best treated as estimates and applied with other forms of long-term we
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [8]</span>
@@ -9666,7 +9673,8 @@ Avg: 14.06°C
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2>
+<p><a id="final-conclusion"></a></p>
+<h3 id="8.-Conclusion-and-Further-Recommendations"><strong>8. Conclusion and Further Recommendations</strong><a class="anchor-link" href="#8.-Conclusion-and-Further-Recommendations">¶</a></h3>
 </div>
 </div>
 </div>
@@ -9675,7 +9683,7 @@ Avg: 14.06°C
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Cell [9]</span>
@@ -9727,67 +9735,22 @@ Prediction and analysis complete.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Weather-Prediction-Model:-Summary-and-Future-Improvements">Weather Prediction Model: Summary and Future Improvements<a class="anchor-link" href="#Weather-Prediction-Model:-Summary-and-Future-Improvements">¶</a></h4><h4 id="Project-Overview">Project Overview<a class="anchor-link" href="#Project-Overview">¶</a></h4><p>This notebook presents a comprehensive machine learning pipeline for predicting maximum temperatures based on historical weather data. XGBoost emerged as the top-performing model after extensive training, evaluation, and fine-tuning.</p>
-<h4 id="Key-Accomplishments">Key Accomplishments<a class="anchor-link" href="#Key-Accomplishments">¶</a></h4><ol>
-<li>Successful data preprocessing, including removal of missing values and outliers</li>
-<li>Development of advanced features, including time-based and lag features</li>
-<li>Evaluation of multiple regression models using K-Fold cross-validation</li>
-<li>Fine-tuning of XGBoost model using RandomizedSearchCV</li>
-<li>Residual analysis for error assessment</li>
-<li>Validation on test set with robust RMSE</li>
-<li>Future predictions for 200 days with visualization</li>
+<p>This notebook contains a comprehensive machine learning pipeline for predicting maximum temperatures based on historical weather data. A number of models were trained, evaluated, and fine-tuned, with BayesianRidge emerging as the top performer following extensive hyperparameter tuning.</p>
+<p>Data preprocessing was completed successfully, with missing values and outliers removed to ensure data quality. Several advanced features were developed, including time-based features like day of year and lag. These improved the model's ability to detect temporal patterns in meteorological data.</p>
+<p>The performance of several regression models, including RandomForest, LightGBM, and Ridge, was assessed using K-Fold cross-validation. After evaluating various models, BayesianRidge was chosen for fine-tuning due to its superior performance, and additional improvements were made via hyperparameter optimization with RandomizedSearchCV.</p>
+<p>Residual analysis was used to assess the errors in the models, and the best-tuned model was validated on the test set, yielding a robust RMSE. Future predictions were made for 200 days, and the model's forecasts were saved and visualized to provide insight into future weather trends.</p>
+<p>In order to optimize the capability of the weather prediction model, various approaches can be investigated, including data enrichment and more advanced modeling methodologies. Below are some further suggestions:</p>
+<ol>
+<li>Collect and expand more historical and external data sources can improve the model significantly. Larger data means better output, the model can provide a more precise long-term prediction of the weather in New York City.</li>
+<li>While the feature engineering of this model is effectively implemented, there are still areas on which additional improvements can be made. For example, although lag features have already been included, the use of more advanced rolling statistics, such exponentially weighted moving averages (EWMA), could facilitate a more accurate representation of recent trends. Furthermore, examination of possible interactions among characteristics (such as temperature and humidity, or windspeed and cloud cover) may uncover non-linear correlations that enhance the model.</li>
+<li>Implementing advanced time series models can significantly improve the accuracy of weather forecasting. ARIMA (AutoRegressive Integrated Moving Average) and SARIMA (Seasonal ARIMA) are conventional time-series models specifically developed to address temporal dependencies in data which can be considered.</li>
+<li>As this project has implemented several Machine Learning models at once, model stacking and blending can be another improvement to this project. These models can be combined to form an ensemble and using techniques such as stacking, blending, or voting classifiers can leverage the strengths of different models to improve overall accuracy of this weather prediction.</li>
+<li>While RandomizedSearchCV has been used, it can be improved further by incorporating Optuna for more sophisticated hyperparameter tuning or Bayesian optimization techniques for more efficient search spaces. Furthermore, fine-tune regularization parameters (alpha, lambda) for models such as Ridge, Lasso, and XGBoost to avoid overfitting and improve generalization to new data.</li>
+<li>The project can use algorithms to incrementally update its learning as new data becomes available. For example, scikit-learn's SGDRegressor or XGBoost can be integrated into an online learning framework, allowing the model to dynamically adapt to new weather patterns.</li>
+<li>This weather model may struggle with extreme events such as heatwaves or thunderstorms. Use anomaly detection techniques (such as Isolation Forest or One-Class SVM) to explicitly identify and model these outlier events. It is also possible to augment the dataset with synthetic data or merge data from other regions experiencing similar extreme conditions.</li>
+<li>To improve convergence and accuracy, this project can extend the MLPRegressor with deeper architectures and advanced optimizers.</li>
 </ol>
-<h4 id="Suggestions-for-Future-Improvements">Suggestions for Future Improvements<a class="anchor-link" href="#Suggestions-for-Future-Improvements">¶</a></h4><ol>
-<li><p>Data Enrichment</p>
-<ul>
-<li>Collect and expand historical and external data sources</li>
-<li>Larger dataset for more precise long-term predictions</li>
-</ul>
-</li>
-<li><p>Advanced Feature Engineering</p>
-<ul>
-<li>Implement exponentially weighted moving averages (EWMA)</li>
-<li>Explore feature interactions (e.g., temperature-humidity, windspeed-cloud cover)</li>
-</ul>
-</li>
-<li><p>Time Series Models</p>
-<ul>
-<li>Implement ARIMA and SARIMA models for temporal dependencies</li>
-</ul>
-</li>
-<li><p>Ensemble Methods</p>
-<ul>
-<li>Explore model stacking and blending techniques</li>
-<li>Use voting classifiers to leverage strengths of different models</li>
-</ul>
-</li>
-<li><p>Advanced Hyperparameter Tuning</p>
-<ul>
-<li>Incorporate Optuna for sophisticated hyperparameter optimization</li>
-<li>Explore Bayesian optimization techniques</li>
-<li>Fine-tune regularization parameters to avoid overfitting</li>
-</ul>
-</li>
-<li><p>Online Learning</p>
-<ul>
-<li>Implement incremental learning algorithms (e.g., SGDRegressor, XGBoost)</li>
-<li>Allow model to adapt dynamically to new weather patterns</li>
-</ul>
-</li>
-<li><p>Extreme Event Modeling</p>
-<ul>
-<li>Use anomaly detection techniques (e.g., Isolation Forest, One-Class SVM)</li>
-<li>Augment dataset with synthetic data or data from regions with similar extreme conditions</li>
-</ul>
-</li>
-<li><p>Deep Learning Enhancements</p>
-<ul>
-<li>Extend MLPRegressor with deeper architectures</li>
-<li>Implement advanced optimizers for improved convergence and accuracy</li>
-</ul>
-</li>
-</ol>
-<h4 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h4><p>The project successfully developed a reliable and accurate weather prediction model, demonstrating a clear methodology for implementing a machine learning solution. There is room for future refinements to further improve accuracy and model performance.</p>
+<p>Overall, the objectives of developing a reliable and accurate weather prediction model were met. The notebook demonstrates a clear methodology for implementing a machine learning solution for weather prediction, with room for future refinements to improve accuracy and model performance.</p>
 </div>
 </div>
 </div>
@@ -9820,8 +9783,8 @@ Prediction and analysis complete.
 <td>s4031504</td>
 <td>Le Dam Quan</td>
 <td>27%</td>
-<td>Find &amp; research potential datasets, visualization, model fine-tuning, notebook formatting and finalizing, conclusion &amp; further recommendation sections</td>
-<td></td>
+<td>- Find &amp; research potential datasets and models <br/> - Initial data exploration and visualization<br/> - Worked on models: RandomForest, LightGBM<br/> - Notebook formatting and finalizing<br/>- Conclusion &amp; further recommendation <br/> - Evaluation <br/> - Basic Feature Engineering <br/> - Remove outliers</td>
+<td>Cells involved:<br/> - Conclusion and Further Recommendations [9]<br/> - Configurations [1]<br/> - Model Training [5]<br/> - Notebook Markdowns<br/> - Initial Visualization [3]<br/> - Models fine-tuning [6]</td>
 </tr>
 <tr>
 <td>s4001980</td>
@@ -9833,15 +9796,15 @@ Prediction and analysis complete.
 <tr>
 <td>s3977970</td>
 <td>Nguyen Tran Ha Phan</td>
-<td>5%</td>
-<td>Find &amp; research datasets</td>
-<td></td>
+<td>6%</td>
+<td>- Find &amp; research datasets and models <br/>- Data exploration and processing</td>
+<td>Cells involved: [2]</td>
 </tr>
 <tr>
-<td>s</td>
+<td>s4045608</td>
 <td>Tran Quoc Hung</td>
-<td>1%</td>
-<td>Find &amp; research datasets</td>
+<td>0%</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
